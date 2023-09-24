@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Warehouse } from "./ware-house";
 import { Product } from "./product";
 export enum TransactionType {
@@ -6,7 +6,7 @@ export enum TransactionType {
   WITHDRAW = "withdraw",
 }
 @Entity()
-export class InventoryTransaction {
+export class InventoryTransaction extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

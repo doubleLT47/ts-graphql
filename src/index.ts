@@ -11,8 +11,9 @@ import RedisStore from "connect-redis";
 import { AppDataSource } from "./configs/db";
 import { HelloResolver } from "./resolvers/hello";
 // import { PostResolver } from "./resolvers/post";
-import { UserResolver } from "./resolvers/user";
+import { UserResolver } from "@resolvers/user";
 import { PRODUCT } from "./constants";
+import { InventoryResolver } from "@resolvers/inventory";
 import configs from "./configs";
 // import { Category } from "./entities/category";
 // import { Product } from "./entities/product";
@@ -55,7 +56,7 @@ const main = async () => {
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloResolver, UserResolver],
+      resolvers: [HelloResolver, UserResolver, InventoryResolver],
       emitSchemaFile: true,
       validate: false,
     }),

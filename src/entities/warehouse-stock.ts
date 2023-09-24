@@ -1,9 +1,9 @@
 import { Product } from "./product";
-import { Column, Entity, ManyToOne, PrimaryColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ManyToOne, PrimaryColumn } from "typeorm";
 import { Warehouse } from "./ware-house";
 
 @Entity()
-export class WarehouseStock {
+export class WarehouseStock extends BaseEntity {
   @PrimaryColumn()
   productId: number;
 

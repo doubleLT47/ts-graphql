@@ -1,7 +1,7 @@
 import { User } from "../entities/user";
 import { InputType, Field, Resolver, Mutation, Arg, ObjectType, Ctx } from "type-graphql";
 import bcriptjs from "bcryptjs";
-import { MyContext } from "src/type";
+import { MyContext } from "@_types/index";
 
 @InputType()
 class UsernamePasswordInput {

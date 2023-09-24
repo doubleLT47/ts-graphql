@@ -11,10 +11,25 @@ type FieldError {
 type Mutation {
   login(options: UsernamePasswordInput!): UserResponse!
   register(options: UsernamePasswordInput!): UserResponse!
+  registerTransaction(input: RegisterTransactionInput!): RegisterTransactionResponse!
 }
 
 type Query {
   hello: String!
+}
+
+input RegisterTransactionInput {
+  productId: Float!
+  quantity: Float!
+  type: String!
+  warehouseId: Float!
+}
+
+type RegisterTransactionResponse {
+  productId: Float!
+  transactionId: Float!
+  updatedQuantity: Float!
+  warehouseId: Float!
 }
 
 type User {

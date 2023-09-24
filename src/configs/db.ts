@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
   username,
   port,
   database: name,
-  synchronize: false,
+  synchronize: true,
   logging: true,
   entities: ["src/entities/**/*.ts"],
   migrations: [],
